@@ -1,0 +1,254 @@
+.navbar {
+    /* ใช้ Flexbox จัดเรียงรายการในแถบนำทางให้อยู่ในแนวนอน */
+    display: flex;
+    /* จัดช่องว่างระหว่างรายการ (Home และ Search) ให้ห่างกัน */
+    justify-content: space-between;
+    /* จัดแนวตั้งให้อยู่ตรงกลาง */
+    align-items: center;
+    /* กำหนดสีพื้นหลัง */
+    background-color: #F5E7C6;
+    /* กำหนดระยะห่างภายใน (บน/ล่าง: 10px, ซ้าย/ขวา: 20px) */
+    padding: 10px 20px;
+    /* ให้แถบนำทางอยู่ด้านบนสุด */
+    width: 100%;    
+    box-sizing: border-box; /* ทำให้ padding ไม่เพิ่มขนาดโดยรวม */
+}
+
+/* สไตล์สำหรับปุ่ม Home */
+.nav-item.home-btn {
+    color: rgb(250, 250, 250); /* สีข้อความ */
+    text-decoration: none; /* ลบเส้นใต้ */
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s; /* เพิ่มความนุ่มนวลในการเปลี่ยนสี */
+}
+
+.nav-item.home-btn:hover {
+    background-color: #FF937E; /* เปลี่ยนสีเมื่อชี้ (hover) */
+}
+
+/* สไตล์สำหรับช่องค้นหา */
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+/* สไตล์สำหรับกล่องข้อความ Input */
+.search-input {
+    padding: 8px;
+    border: none;
+    border-radius: 4px 0 0 4px; /* มุมโค้งด้านซ้าย */
+    font-size: 16px;
+    outline: none; /* ลบเส้นขอบเมื่อโฟกัส */
+}
+
+/* สไตล์สำหรับปุ่มค้นหา */
+.search-btn {
+    padding: 8px 12px;
+    background-color: C1E59F; /* สีเขียว */
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0; /* มุมโค้งด้านขวา */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+    background-color: #A3D78A; /* สีเขียวเข้มขึ้นเมื่อชี้ */
+}
+.page-footer {
+            /* จัดตำแหน่งให้อยู่ด้านล่างสุดของหน้า */
+            position: relative; /* หรือ fixed, sticky ขึ้นอยู่กับดีไซน์ */
+            bottom: 0;
+            width: 100%;
+            
+            /* สไตล์หลัก */
+            background-color: #F5E7C6; /* สีพื้นหลังเข้ม */
+            color: #000000; /* สีตัวอักษรสว่าง */
+            padding: 20px 0; /* ระยะห่างภายใน บน/ล่าง */
+            text-align: center; /* จัดข้อความอยู่ตรงกลาง */
+            font-family: Arial, sans-serif; /* ฟอนต์ */
+            font-size: 14px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto; /* จัดให้อยู่ตรงกลางหน้า */
+            padding: 0 20px;
+        }
+
+        .footer-content p {
+            margin: 5px 0;
+            line-height: 1.5;
+        }
+
+        .footer-content a {
+            color: #ed76ff; /* สีเขียวสำหรับลิงก์ */
+            text-decoration: none;
+        }
+
+        .footer-content a:hover {
+            text-decoration: underline;
+        }
+        /* สไตล์สำหรับแกลเลอรี่รูปภาพ */
+.image-gallery {
+    display: flex; /* จัดเรียงรูปภาพในแนวนอน */
+    justify-content: center; /* จัดให้อยู่ตรงกลาง */
+    gap: 20px; /* ระยะห่างระหว่างรูปภาพ */
+    padding: 40px 20px; /* ระยะห่างภายนอก */
+    flex-wrap: wrap; /* ให้รูปภาพขึ้นบรรทัดใหม่เมื่อหน้าจอเล็ก */
+}
+
+/* สไตล์สำหรับแต่ละรายการในแกลเลอรี่ (รูปภาพ + overlay) */
+.gallery-item {
+    position: relative; /* สำคัญสำหรับการวาง overlay */
+    width: 300px; /* กำหนดความกว้างของแต่ละรูป */
+    height: 200px; /* กำหนดความสูงของแต่ละรูป */
+    overflow: hidden; /* ซ่อนส่วนที่เกินขอบ */
+    border-radius: 8px; /* ขอบโค้ง */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงา */
+    text-decoration: none; /* ลบเส้นใต้ลิงก์ */
+    color: inherit; /* ใช้สีตัวอักษรเริ่มต้น */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px); /* เลื่อนขึ้นเล็กน้อยเมื่อชี้ */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* เงาเข้มขึ้น */
+}
+
+/* สไตล์สำหรับรูปภาพจริง */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ทำให้รูปภาพครอบคลุมพื้นที่โดยไม่บิดเบี้ยว */
+    display: block; /* ลบช่องว่างด้านล่างรูปภาพ */
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05); /* ซูมเข้าเล็กน้อยเมื่อชี้ */
+}
+
+/* สไตล์สำหรับ Overlay (ข้อความที่ซ้อนทับ) */
+.overlay {
+    position: absolute;
+    bottom: 0; /* อยู่ด้านล่าง */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* พื้นหลังทึบแสงเล็กน้อย */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.1em;
+    opacity: 0; /* ซ่อนไว้ตอนแรก */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1; /* แสดงขึ้นมาเมื่อชี้ */
+}
+
+/* การตอบสนองต่อหน้าจอขนาดเล็ก */
+@media (max-width: 768px) {
+    .image-gallery {
+        flex-direction: column; /* จัดเรียงเป็นแนวตั้งเมื่อหน้าจอเล็ก */
+        align-items: center; /* จัดให้อยู่ตรงกลาง */
+    }
+    .gallery-item {
+        width: 90%; /* รูปภาพจะกว้างขึ้น */
+        height: 250px;
+    }
+}
+/* ------------------------------------ */
+/* สไตล์สำหรับส่วน ประวัติการทำงาน */
+/* ------------------------------------ */
+
+.work-history {
+    max-width: 1000px; /* จำกัดความกว้างไม่ให้ยืดเกินไป */
+    margin: 40px auto; /* จัดให้อยู่ตรงกลางหน้า */
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* สไตล์สำหรับหัวข้อหลัก */
+.work-history h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    border-bottom: 3px solid hsl(341, 76%, 69%); /* เส้นใต้สีเขียว */
+    padding-bottom: 10px;
+}
+
+/* สไตล์สำหรับแต่ละรายการงาน */
+.job-entry {
+    background-color: #f9f9f9;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* เงาอ่อน ๆ */
+    border-left: 5px solid #ff88c3; /* แถบสีด้านซ้าย */
+}
+
+/* สไตล์สำหรับชื่อบริษัทและตำแหน่ง */
+.job-entry h2 {
+    color: #007bff; /* สีน้ำเงินสำหรับชื่อบริษัท */
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.job-entry .position {
+    color: #666; /* สีเทาสำหรับตำแหน่ง */
+    font-size: 0.9em;
+    font-weight: normal;
+    background-color: #e0e0e0;
+    padding: 4px 8px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+/* สไตล์สำหรับคำอธิบายงาน */
+.job-entry .description {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 2px dashed #ccc;
+}
+
+/* จัดกลุ่มรูปภาพ */
+.job-images {
+    display: flex; /* จัดเรียงรูปภาพในแนวนอน */
+    gap: 20px; /* ระยะห่างระหว่างรูปภาพ */
+    justify-content: center; /* จัดให้อยู่ตรงกลาง */
+    margin-top: 20px;
+    flex-wrap: wrap; /* ให้รูปภาพขึ้นบรรทัดใหม่เมื่อหน้าจอเล็ก */
+}
+
+/* สไตล์สำหรับรูปภาพแต่ละรูป */
+.work-image {
+    width: 250px; /* ขนาดตามที่คุณต้องการ */
+    height: auto;
+    border-radius: 8px; /* ขอบโค้ง */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.work-image:hover {
+    transform: scale(1.05); /* ซูมเล็กน้อยเมื่อชี้ */
+}
+
+/* สไตล์เมื่อหน้าจอมีขนาดเล็ก (เช่น มือถือ) */
+@media (max-width: 600px) {
+    .job-entry h2 {
+        font-size: 1.5em;
+    }
+    .job-images {
+        flex-direction: column;
+        align-items: center;
+    }
+}
